@@ -45,4 +45,18 @@ private:
 
 public:
 
+	GAME()
+	{
+		GameName = "NONE";
+		Publisher = "NONE";
+		Developer = "NONE";
+	}
+	GAME(string GameNames, string Publishers, string Developers)
+	{
+		GameName  = GameNames;
+		Publisher = Publishers;
+		Developer = Developers;
+	}
+
+
 };
