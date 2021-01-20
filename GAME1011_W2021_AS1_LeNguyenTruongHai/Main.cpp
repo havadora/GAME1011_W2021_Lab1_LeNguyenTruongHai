@@ -17,13 +17,13 @@ public:
 	{
 		m_PlatformName = "NONE";
 		m_Manufactor   = "NONE";
-		this->m_Games[3]  = "NONE";
+		m_Games[3]  = "NONE";
 	}
 	Platform(string PlatName, string Manufactors, string Game)
 	{
 		m_PlatformName = PlatName;
 		m_Manufactor = Manufactors;
-		this->m_Games[3] = Game;
+		m_Games[3] = Game;
 	}
 	string GetPlatName()
 	{
@@ -51,15 +51,21 @@ public:
 		m_GameName = "NONE";
 		m_Publisher = "NONE";
 		m_Developer = "NONE";
-		this->m_Achievement[3] = "NONE";
+		m_Achievement[3] = "NONE";
 	}
 	GAME(string GameNames, string Publishers, string Developers, string Achievements)
 	{
 		m_GameName = GameNames;
 		m_Publisher = Publishers;
 		m_Developer = Developers;
-		this->m_Achievement[3] = Achievements;
+		m_Achievement[3] = Achievements;
 	}
+
+
+};
+class ACHIEVEMENT : public GAME
+{
+
 
 
 };
