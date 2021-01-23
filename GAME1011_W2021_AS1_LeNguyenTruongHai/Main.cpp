@@ -129,52 +129,50 @@ class ACHIEVEMENT : public GAME
 private:
 	string m_Tilte;
 	string m_Decsription;
-	int m_ScoreValue;
-	string* m_PtrTitle = nullptr;
-	string* m_PtrDescription = nullptr;
-	int* m_PtrScoreValue = nullptr;
-	int m_ArraySize;
+	string m_ScoreValue;
+	
+	
 	
 public:
 	ACHIEVEMENT()
 	{
 		m_Tilte = "NONE";
 		m_Decsription = "NONE";
-		m_ScoreValue = 0;
+		m_ScoreValue = "NONE";
 	}
-	ACHIEVEMENT(string Tilte,  string Decsription, int ScoreValue, int Size, int order) 
+	ACHIEVEMENT(string Tilte,  string Decsription, string ScoreValue) 
 	{
 		
-		SetTitle(Tilte,Size,order);
-		SetDecsription(Decsription,Size, order);
-		SetValue(ScoreValue,Size,order);
+		SetTitle(Tilte);
+		SetDecsription(Decsription);
+		SetValue(ScoreValue);
 	}
-	void SetTitle(string title,int Size, int order)
+	void SetTitle(string title)
 	{	
-		
-		m_PtrTitle = new string[Size];
-		m_PtrTitle[order] = title;
+		m_Tilte = title;
 	}
-	void SetDecsription(string descrpition, int Size, int order)
+	void SetDecsription(string descrpition)
 	{
-		m_PtrDescription = new string[Size];
-		m_PtrDescription[order] = descrpition ;
+		m_Decsription = descrpition;
 	}
-	void SetValue(int value, int Size, int order)
+	void SetValue(string value)
 	{
 		
-		m_PtrScoreValue[order] = value;
+		m_ScoreValue = value;
 	}
-	void print(int size)
+	string GetTitle()
 	{
-		for (int i = 0; i < size; i++)
-		{
-			cout << "Achievement " << i + 1 << endl;
-			cout << "Title: " << m_PtrTitle[i] << endl;
-			cout << "Description: " << m_PtrDescription[i] << endl;
-			cout << "Score Value: " << m_PtrScoreValue[i] << endl;
-		}
+		return m_Tilte;
+	}
+	
+	string GetDescription()
+	{
+		return m_Decsription;
+	}
 
+	string GetValue()
+	{
+		return m_ScoreValue;
 	}
 	
 
@@ -192,9 +190,14 @@ int main()
 	int AchievementSize;
 	string title;
 	string description;
-	int value;
+	string value;
 	bool options = true;
 	int OPnumber;
+	string* m_PtrTitle = nullptr;
+	string* m_PtrDescription = nullptr;
+	string* m_PtrScoreValue = nullptr;
+
+	
 
 	cout << "What is the platform you want to choose (Enter the number) ? " << endl;
 	platform.PlatformPrint();
@@ -220,6 +223,10 @@ int main()
 	cout << "How many achievements do u want in " << Game.GetGameNames(Platformchoices, Gamechoices - 1) << " ?" << endl;
 	cin >> AchievementSize;
 
+	m_PtrTitle = new string[AchievementSize];
+	m_PtrDescription = new string[AchievementSize];
+	m_PtrScoreValue = new string[AchievementSize];
+
 	while (options == true)
 	{
 		for (int i = 0; i < AchievementSize; i++)
@@ -232,10 +239,13 @@ int main()
 			getline(std::cin, description);
 			cout << "Enter the score value: ";
 			cin >> value;
-			
-			ach.SetTitle(title,AchievementSize,i);
-			ach.SetDecsription(description, AchievementSize, i);
-			ach.SetValue(value, AchievementSize, i);
+			ach.SetTitle(title);
+			ach.SetDecsription(description);
+			ach.SetValue(value);
+
+			m_PtrTitle[i] = ach.GetTitle();
+			m_PtrDescription[i] = ach.GetDescription();
+			m_PtrScoreValue[i] = ach.GetValue();
 		}
 		cin.ignore();
 		cout << "Do you want to add more ? (1-yes|0-no) ";
@@ -257,7 +267,14 @@ int main()
 	cout << "The Game: " << Game.GetGameNames(Platformchoices, Gamechoices - 1) << endl;
 	cout << "The Publisher: " << Game.GetPublisher(Platformchoices - 1) << endl;
 	cout << "The Developer: " << Game.GetDeveloper(Platformchoices, Gamechoices - 1) << endl;
-	ach.print(AchievementSize);
+	for (int i = 0; i < AchievementSize; i++)
+	{
+		cout << "The Achievement " << i + 1 << "Title: " << m_PtrTitle[i] << endl;
+		cout << "The Achievement " << i + 1 << "Description: " << m_PtrDescription[i] << endl;
+		cout << "The Achievement " << i + 1 << "Score Value: " << m_PtrScoreValue[i]  << endl;
+	}
 	cout << "==============================================================================" << endl;
-
+	delete[] m_PtrTitle;
+	delete[] m_PtrDescription;
+	delete[] m_PtrScoreValue;
 }
