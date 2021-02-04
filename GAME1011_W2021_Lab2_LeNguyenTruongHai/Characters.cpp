@@ -4,33 +4,38 @@ Character::Character()
 {
 	m_pName = "";
 	m_pHealth = 0;
-
 }
 
 Character::Character(string name, int health)
 {
+	setName() = name;
+	setHealth() = health;
+
 }
 
 Character::~Character()
 {
+	Character() = default;
 }
 
-void Character::setName()
+void Character::setName(string name)
 {
+	m_pName = name;
 }
 
-void Character::setHealth()
+void Character::setHealth(itn health)
 {
+	m_pHealth = health;
 }
 
-string Character::getName(string name)
+string Character::getName()
 {
-	return string();
+	return m_pName;
 }
 
-int Character::getHealth(int health)
+int Character::getHealth()
 {
-	return 0;
+	return m_pHealth;
 }
 
 
