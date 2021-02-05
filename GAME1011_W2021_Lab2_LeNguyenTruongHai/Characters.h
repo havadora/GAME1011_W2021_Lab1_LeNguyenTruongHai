@@ -7,8 +7,7 @@
 using namespace std;
 
 
-enum Skill {Fire, Devour, Ice};
-enum Attack {Light,Medium,Heavy};
+
 
 class Character 
 {
@@ -20,7 +19,7 @@ public:
 	void setName(string name);
 	void setHealth(int health);
 	string getName() const;
-	int getHealth();
+	int getHealth() const;
 	virtual void DisplayInfor() const = 0;
 
 private:
@@ -34,15 +33,15 @@ class Weapon : public Character
 public:
 
 	Weapon();
-	Weapon(string name, int Dam, string description, Skill* skills);
-	void setName(string name);
+	Weapon(string name, int Dam, string description, string skills, int order);
+	void setWeaName(string name);
 	void setDam(int Dam);
 	void setDes(string description);
-	void setSkill(Skill* skills);
-	string getName();
+	void setSkill(string skills, int order);
+	string getWeaName();
 	int getDam();
 	string getDes();
-	Skill* getSkill() const;
+	string getSkill(int order) const;
 	virtual void DisplayInfor();
 
 private:
@@ -50,23 +49,22 @@ private:
 	int m_pDam;
 	string m_pWeapon;
 	string m_pDes;
-	Skill* m_pSkill;
+	string m_pSkill[];
 	friend class Character;
 };
 
 class Classe : public Character
 {
 public:
+	Classe(string name, int health, string classes);
 	string getClasses() const;
 	void setClasses(string clas);
 	string getName() const;
-	string getInHealth();
-	void setInHealth();
-	int getHealth() const;
+	virtual void DisplayInfor();
 
 private:
 	string m_pTitle;
-	int m_pInHealth;
+	
 };
 
 

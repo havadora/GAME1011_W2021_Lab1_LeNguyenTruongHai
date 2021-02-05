@@ -2,4 +2,16 @@
 #include "iostream"
 
 using namespace std;
-enum Classes { Demon, Hero, Angel };
+
+void main()
+{
+	const int number = 5;
+
+	cout << "Welcome to customize character shop !!" << endl;
+	cout << "You allow to make maxium 5 characters " << endl;
+	
+	Character* charac[number];
+
+
+
+}
