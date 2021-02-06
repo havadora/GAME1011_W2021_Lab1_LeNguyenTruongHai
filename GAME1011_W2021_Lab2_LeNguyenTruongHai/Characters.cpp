@@ -14,8 +14,8 @@ Character::Character(string name, int health)
 }
 
 Character::~Character()
-{
-}
+= default;
+
 
 void Character::setName(string name)
 {
@@ -41,11 +41,15 @@ int Character::getHealth() const
 
 Weapon::Weapon()
 {
-	m_pWeapon = "";
+	    m_pWeapon = "";
 		m_pDam = 0;
 		m_pDes = "";
-		m_pSkill[0] = { 0 };
+		m_pSkill[2] = { "None","None" };
 }
+
+Weapon::~Weapon()
+ = default;
+
 
 Weapon::Weapon(string name, int Dam, string description, string skills, int order)
 {
@@ -75,17 +79,17 @@ void Weapon::setSkill(string skills, int order)
 	m_pSkill[order] = skills;
 }
 
-string Weapon::getWeaName()
+string Weapon::getWeaName() const
 {
 	return m_pWeapon;
 }
 
-int Weapon::getDam()
+int Weapon::getDam() const
 {
 	return m_pDam;
 }
 
-string Weapon::getDes()
+string Weapon::getDes() const
 {
 	return m_pDes;
 }
@@ -95,11 +99,23 @@ string Weapon::getSkill(int order) const
 	return m_pSkill[order];
 }
 
-void Weapon::DisplayInfor() 
+void Weapon::DisplayInfor() const
 {
 	cout << "Weapon: " << getWeaName() << endl;
 
 }
+
+Classe::Classe()
+{
+	m_pTitle = "None";
+	m_pName = " ";
+	m_pHealth = 0;
+
+}
+
+Classe::~Classe()
+= default;
+
 
 Classe::Classe(string name, int health, string classes) : Character(name,health)
 {
@@ -118,10 +134,10 @@ void Classe::setClasses(string clas)
 
 string Classe::getName() const
 {
-    return  getClasses() + Character::getName();
+    return  getClasses() + " " + Character::getName();
 }
 
-void Classe::DisplayInfor()
+void Classe::DisplayInfor() const
 {
 	cout << "Your character name with class: " << getName() << endl;
 }
