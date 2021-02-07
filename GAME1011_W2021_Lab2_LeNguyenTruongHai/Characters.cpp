@@ -41,10 +41,10 @@ int Character::getHealth() const
 
 Weapon::Weapon()
 {
-	    m_pWeapon = "";
+	    m_pWeapon = " ";
 		m_pDam = 0;
-		m_pDes = "";
-		m_pSkill[2] = { "None","None" };
+		m_pDes = " ";
+		m_pSkill[1] = { "None","None" };
 }
 
 Weapon::~Weapon()
@@ -101,7 +101,14 @@ string Weapon::getSkill(int order) const
 
 void Weapon::DisplayInfor() const
 {
+	
 	cout << "Weapon: " << getWeaName() << endl;
+	cout << "Damage: " << getDam() << endl;
+	cout << "Description: " << getDes() << endl;
+	for (int i = 0; i < 2; i++)
+	{
+		cout << "Skill " << i+1 << ": " <<getSkill(i)<< endl;
+	}
 
 }
 
@@ -139,7 +146,9 @@ string Classe::getName() const
 
 void Classe::DisplayInfor() const
 {
+	cout << endl;
 	cout << "Your character name with class: " << getName() << endl;
+	cout << "Your character health: " << getHealth() << endl;
 }
 
 

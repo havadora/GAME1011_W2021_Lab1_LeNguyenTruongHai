@@ -1,11 +1,3 @@
-﻿  Characters.cpp
-D:\GAME1011_W2021\GAME1011_W2021_Lab2_LeNguyenTruongHai\Characters.h(54,19): warning C4200: nonstandard extension used: zero-sized array in struct/union
-D:\GAME1011_W2021\GAME1011_W2021_Lab2_LeNguyenTruongHai\Characters.h(54,19): message : This member will be ignored by a defaulted constructor or copy/move assignment operator
-  Main.cpp
-D:\GAME1011_W2021\GAME1011_W2021_Lab2_LeNguyenTruongHai\Characters.h(54,19): warning C4200: nonstandard extension used: zero-sized array in struct/union
-D:\GAME1011_W2021\GAME1011_W2021_Lab2_LeNguyenTruongHai\Characters.h(54,19): message : This member will be ignored by a defaulted constructor or copy/move assignment operator
+﻿  Main.cpp
 D:\GAME1011_W2021\GAME1011_W2021_Lab2_LeNguyenTruongHai\Main.cpp(8,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
-D:\GAME1011_W2021\GAME1011_W2021_Lab2_LeNguyenTruongHai\Main.cpp(24,11): warning C4101: 'weapon': unreferenced local variable
-D:\GAME1011_W2021\GAME1011_W2021_Lab2_LeNguyenTruongHai\Main.cpp(21,14): warning C4101: 'charac': unreferenced local variable
-  Generating Code...
   GAME1011_W2021_Lab2_LeNguyenTruongHai.vcxproj -> D:\GAME1011_W2021\GAME1011_W2021_Lab2_LeNguyenTruongHai\Debug\GAME1011_W2021_Lab2_LeNguyenTruongHai.exe
