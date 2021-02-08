@@ -108,10 +108,10 @@ void main()
 			}
 			else if (turn != 0)
 			{
-				for (int i = 0; i < sizes; i++)
+				for (int i = 0; i <= sizes; i++)
 				{
 					i = turn + 1;
-					sizes = turn;
+					sizes = turn + 1 ;
 					cout << "=====================================" << endl;
 					cout << "Your character number " << i + 1 << endl;
 					cout << "Enter your character name: ";
