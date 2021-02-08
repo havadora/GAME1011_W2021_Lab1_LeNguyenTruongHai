@@ -93,15 +93,15 @@ void main()
 					cin >> weaOp;
 					if (weaOp == 1)
 					{
-						weapon[i] = weaponOps[1];
+						weapon[i] = weaponOps[0];
 					}
 					else if (weaOp == 2)
 					{
-						weapon[i] = weaponOps[2];
+						weapon[i] = weaponOps[1];
 					}
 					else if (weaOp == 3)
 					{
-						weapon[i] = weaponOps[3];
+						weapon[i] = weaponOps[2];
 					}
 					turn = i;
 				}
@@ -147,15 +147,15 @@ void main()
 					cin >> weaOp;
 					if (weaOp == 1)
 					{
-						weapon[i] = weaponOps[1];
+						weapon[i] = weaponOps[0];
 					}
 					else if (weaOp == 2)
 					{
-						weapon[i] = weaponOps[2];
+						weapon[i] = weaponOps[1];
 					}
 					else if (weaOp == 3)
 					{
-						weapon[i] = weaponOps[3];
+						weapon[i] = weaponOps[2];
 					}
 				
 					turn = i;
